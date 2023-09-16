@@ -36,7 +36,7 @@ function App() {
           <div className=''>
             <h1 className='pb-4 text-white text-shadow'>Age Calculator</h1>
             <input
-              className="form-control-lg "
+              className="form-control "
               id="input"
               value={birthYear}
               onChange={(e) => inputChangeHandler(e)}

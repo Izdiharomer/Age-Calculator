@@ -37,3 +37,12 @@ p {
   font-weight: bold;
   
 }
+
+#input {
+  padding: 1%;
+  margin: 0 auto;
+  display: block; 
+  width: 100%; 
+  margin-bottom: 3%;
+}
+
