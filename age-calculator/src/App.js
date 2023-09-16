@@ -26,10 +26,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1></h1>
+        <h1>Age Calculator</h1>
         <h2></h2>
         <input
-          className="form-control-sm"
+          className="form-control-md"
           id="inputPassword2"
           onChange={(e) => inputChangeHandler(parseInt(e.target.value))}
         />
