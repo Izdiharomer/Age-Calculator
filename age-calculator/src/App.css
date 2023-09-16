@@ -1,0 +1,39 @@
+
+body {
+  background-image: url('/public/images/AC.avif'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+ 
+}
+
+
+.btn-purple-moon {
+  background: #57e8e3; /* Fallback color if gradients are not supported */
+  background: -webkit-linear-gradient(to right, #57e8e3, #09a8a1);
+  background: linear-gradient(to right, #57e8e3, #09a8a1);
+  color: #fff;
+  border: 3px solid #eee;
+}
+
+
+.app-container {
+  min-height: 100vh;
+  /* background-image: linear-gradient(to right, #43cbff, #9708cc); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 110px;
+}
+
+span {
+  color: red;
+ 
+}
+
+p {
+  color: #f1e9ee;
+  font-weight: bold;
+  
+}

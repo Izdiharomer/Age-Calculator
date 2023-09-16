@@ -30,14 +30,13 @@ function App() {
   }
 
   return (
-    <div className="container">
-      <header className="row">
-        <div className="col-12 text-center">
-          <div className='mx-auto w-50 p-3'>
-            <h1 className='mt-4'>Age Calculator</h1>
-            <h2></h2>
+    <div className="app-container">
+      <header className="">
+        <div className="">
+          <div className=''>
+            <h1 className='mt-4 text-white text-shadow'>Age Calculator</h1>
             <input
-              className="form-control-lg"
+              className="form-control-lg m-4"
               id="input"
               value={birthYear}
               onChange={(e) => inputChangeHandler(e)}
@@ -45,25 +44,29 @@ function App() {
               inputMode="numeric"
               placeholder='0'
             />
+            {errorMessage && <span>{errorMessage}</span>}
+            {!errorMessage && age > 0 && (
+              <p>You are {age} years old</p>
+            )}
             <div>
               <button
-                className="btn btn-primary btn-lg mx-3 px-5 py-2 mt-2"
+                className="btn-purple-moon btn btn-primary btn-lg mx-3 px-5 py-2 mt-2"
                 onClick={clickHandler}
               >
                 Submit
               </button>
               <button
-                className="btn btn-primary btn-lg mx-3 px-5 py-2 mt-2"
+                className="btn-purple-moon btn btn-primary btn-lg mx-3 px-5 py-2 mt-2"
                 onClick={resetHandler}
               >
                 Reset
               </button>
             </div>
 
-            {errorMessage && <span>{errorMessage}</span>}
+            {/* {errorMessage && <span>{errorMessage}</span>}
             {!errorMessage && age > 0 && (
-              <span>You are {age} years old</span>
-            )}
+              <p>You are {age} years old</p>
+            )} */}
           </div>
         </div>
       </header>
