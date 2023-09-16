@@ -34,9 +34,9 @@ function App() {
       <header className="">
         <div className="">
           <div className=''>
-            <h1 className='mt-4 text-white text-shadow'>Age Calculator</h1>
+            <h1 className='pb-4 text-white text-shadow'>Age Calculator</h1>
             <input
-              className="form-control-lg m-4"
+              className="form-control-lg "
               id="input"
               value={birthYear}
               onChange={(e) => inputChangeHandler(e)}
@@ -46,27 +46,22 @@ function App() {
             />
             {errorMessage && <span>{errorMessage}</span>}
             {!errorMessage && age > 0 && (
-              <p>You are {age} years old</p>
+              <p className='p-2'>You are {age} years old</p>
             )}
             <div>
               <button
-                className="btn-purple-moon btn btn-primary btn-lg mx-3 px-5 py-2 mt-2"
+                className="btn-purple-moon btn btn-primary btn-lg mx-2 px-5 py-2 mt-2"
                 onClick={clickHandler}
               >
                 Submit
               </button>
               <button
-                className="btn-purple-moon btn btn-primary btn-lg mx-3 px-5 py-2 mt-2"
+                className="btn-purple-moon btn btn-primary btn-lg mx-2 px-5 py-2 mt-2"
                 onClick={resetHandler}
               >
                 Reset
               </button>
             </div>
-
-            {/* {errorMessage && <span>{errorMessage}</span>}
-            {!errorMessage && age > 0 && (
-              <p>You are {age} years old</p>
-            )} */}
           </div>
         </div>
       </header>
