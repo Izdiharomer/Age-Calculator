@@ -4,48 +4,68 @@ import React, { useState } from "react";
 
 function App() {
   const currentYear = 2023;
-  const [birthYear, setBirthYear] = useState(0);
+  const [birthYear, setBirthYear] = useState("");
   const [age, setAge] = useState(0);
   const [errorMessage, setErrorMessage] = useState("");
 
   function clickHandler() {
-    if (birthYear >= 2023 || birthYear <= 1900) {
+    if (!/^\d+$/.test(birthYear) || birthYear >= 2023 || birthYear <= 1900) {
       setErrorMessage("Please enter a valid birth year.");
       setAge(0);
     } else {
-      const theAge = currentYear - birthYear;
+      const theAge = currentYear - parseInt(birthYear);
       setAge(theAge);
       setErrorMessage("");
     }
   }
 
+  function resetHandler() {
+    setBirthYear("");
+    setAge(0);
+    setErrorMessage("");
+  }
+
   function inputChangeHandler(e) {
-    setBirthYear(e);
+    setBirthYear(e.target.value);
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Age Calculator</h1>
-        <h2></h2>
-        <input
-          className="form-control-md"
-          id="inputPassword2"
-          onChange={(e) => inputChangeHandler(parseInt(e.target.value))}
-        />
-        <div>
-          <button
-            className="btn btn-primary btn-lg mx-3 px-5 py-3 mt-2"
-            onClick={clickHandler}
-          >
-            Submit
-          </button>
-        </div>
+    <div className="container">
+      <header className="row">
+        <div className="col-12 text-center">
+          <div className='mx-auto w-50 p-3'>
+            <h1 className='mt-4'>Age Calculator</h1>
+            <h2></h2>
+            <input
+              className="form-control-lg"
+              id="input"
+              value={birthYear}
+              onChange={(e) => inputChangeHandler(e)}
+              pattern="\d*"
+              inputMode="numeric"
+              placeholder='0'
+            />
+            <div>
+              <button
+                className="btn btn-primary btn-lg mx-3 px-5 py-2 mt-2"
+                onClick={clickHandler}
+              >
+                Submit
+              </button>
+              <button
+                className="btn btn-primary btn-lg mx-3 px-5 py-2 mt-2"
+                onClick={resetHandler}
+              >
+                Reset
+              </button>
+            </div>
 
-        {errorMessage && <span>{errorMessage}</span>}
-        {!errorMessage && age > 0 && (
-          <span>You are {age} years old</span>
-        )}
+            {errorMessage && <span>{errorMessage}</span>}
+            {!errorMessage && age > 0 && (
+              <span>You are {age} years old</span>
+            )}
+          </div>
+        </div>
       </header>
     </div>
   );
