@@ -33,7 +33,14 @@ test('clickHandler is called when the reset button is clicked', () => {
   fireEvent.click(button);
 });
 
- 
+test('inputChangeHandler updates the input value', () => {
+  const { getByPlaceholderText } = render(
+    <App />
+  );
+  const inputElement = getByPlaceholderText('0');
+  fireEvent.change(inputElement, { target: { value: '123' } });
+  expect(inputElement.value).toBe('123');
+});
 
 
 
