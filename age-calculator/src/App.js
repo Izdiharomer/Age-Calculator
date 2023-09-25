@@ -31,9 +31,9 @@ function App() {
 
   return (
     <div className="app-container">
-      <header className="">
-        <div className="">
-          <div className=''>
+      <header>
+        <div>
+          <div>
             <h1 className='pb-4 text-white text-shadow'>Age Calculator</h1>
             <input
               className="form-control "

@@ -1,17 +1,7 @@
 import React from 'react'
+//this component is for practicing on algorithm
 
 function Practice() {
-
-f();
-function f() {
-  console.log('HI');
-}
-
-const x = 10;
-
-console.log(typeof x);
-
-
 
   return (
     <div></div>

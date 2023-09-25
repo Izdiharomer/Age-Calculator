@@ -1,24 +1,24 @@
 import React from "react";
+
 import { render, screen, fireEvent } from '@testing-library/react';
 import App from '../App';
 
-
-test("renders the Age Calculator title", () => {
-  const { getByText } = render(<App />);
-  const titleElement = getByText("Age Calculator");
-  expect(titleElement).toBeInTheDocument();
+it('renders the Age Calculator title"', () => {
+  render(<App />);
+  expect(screen.getByText('Age Calculator')).toBeInTheDocument();
 });
+
 
 test('clickHandler is called when the submit button is clicked', () => {
   const clickHandler = jest.fn();
-
   const { getByText } = render(
-    <App clickHandler={clickHandler} />
+    <App clickHandler={clickHandler} />  //find function clickhandler in App component
   );
 
-  const button = getByText('Submit');
+  const button = getByText('Submit');  //test if the button has this text
 
-  fireEvent.click(button);
+  fireEvent.click(button);  //test if the button has click event listener
+
 });
 
 test('clickHandler is called when the reset button is clicked', () => {
