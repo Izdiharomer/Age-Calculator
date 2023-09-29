@@ -30,8 +30,8 @@ function App() {
   }
 
   return (
-    <div className="app-container">
-      <header>
+    <>
+      <header className="app-container">
         <div>
           <div>
             <h1 className='pb-4 text-white text-shadow'>Age Calculator</h1>
@@ -65,7 +65,7 @@ function App() {
           </div>
         </div>
       </header>
-    </div>
+    </>
   );
 }
 
