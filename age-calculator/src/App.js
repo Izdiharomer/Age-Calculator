@@ -1,8 +1,11 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import React, { useState } from "react";
+import { useTheme } from './ThemeContext';
+import Practice from './Practice';
 
 function App() {
+  const { theme, setTheme } = useTheme();
   const currentYear = 2023;
   const [birthYear, setBirthYear] = useState("");
   const [age, setAge] = useState(0);
@@ -28,21 +31,27 @@ function App() {
   function inputChangeHandler(e) {
     setBirthYear(e.target.value);
   }
-
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
   return (
     <>
-      <header className="app-container">
-        <div>
+    <div className={` ${theme === 'dark' ? 'dark-theme' : ''}`}> 
+      <button className={"btn btn-secondary btn-lg mx-2 px-3 py-1 mt-2"} onClick={toggleTheme}>Toggle Theme</button>
+      <Practice/>
+    </div>
+      <header className={`app-container ${theme === 'dark' ? 'dark-theme' : ''}`}>
+        <div >
           <div>
-            <h1 className='pb-4 text-white text-shadow'>Age Calculator</h1>
+            <h1 className='pb-4  text-white text-shadow'>Age Calculator</h1>
             <input
-              className="form-control "
+              className="form-control"
               id="input"
               value={birthYear}
               onChange={(e) => inputChangeHandler(e)}
               pattern="\d*"
               inputMode="numeric"
-              placeholder='0'
+              placeholder=' 0'
             />
             {errorMessage && <span>{errorMessage}</span>}
             {!errorMessage && age > 0 && (
@@ -64,6 +73,7 @@ function App() {
             </div>
           </div>
         </div>
+
       </header>
     </>
   );

@@ -6,10 +6,13 @@ body {
   background-attachment: fixed;
  
 }
-
+.dark-theme {
+  background-color: #333;
+  color: white;
+}
 
 .btn-purple-moon {
-  background: #57e8e3; /* Fallback color if gradients are not supported */
+  background: #57e8e3; 
   background: -webkit-linear-gradient(to right, #57e8e3, #09a8a1);
   background: linear-gradient(to right, #57e8e3, #09a8a1);
   color: #fff;
@@ -19,7 +22,6 @@ body {
 
 .app-container {
   min-height: 100vh;
-  /* background-image: linear-gradient(to right, #43cbff, #9708cc); */
   display: flex;
   flex-direction: column;
   justify-content: center;
