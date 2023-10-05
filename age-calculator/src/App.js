@@ -6,13 +6,13 @@ import Practice from './Practice';
 
 function App() {
   const { theme, setTheme } = useTheme();
-  const currentYear = 2023;
+  const currentYear = 2024;
   const [birthYear, setBirthYear] = useState("");
   const [age, setAge] = useState(0);
   const [errorMessage, setErrorMessage] = useState("");
 
   function clickHandler() {
-    if (!/^\d+$/.test(birthYear) || birthYear >= 2023 || birthYear <= 1900) {
+    if (!/^\d+$/.test(birthYear) || birthYear >= 2024 || birthYear <= 1900) {
       setErrorMessage("Please enter a valid birth year.");
       setAge(0);
     } else {
@@ -37,7 +37,7 @@ function App() {
   return (
     <>
     <div className={` ${theme === 'dark' ? 'dark-theme' : ''}`}> 
-      <button className={"btn btn-secondary btn-lg mx-2 px-3 py-1 mt-2"} onClick={toggleTheme}>Toggle Theme</button>
+      <button className={"btn btn-secondary btn-lg mx-2 px-3 py-1 mt-2"} onClick={toggleTheme}>{theme ? `Light Mode` : `Dark Mode`}</button>
       <Practice/>
     </div>
       <header className={`app-container ${theme === 'dark' ? 'dark-theme' : ''}`}>

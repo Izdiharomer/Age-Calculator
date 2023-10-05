@@ -1,32 +1,13 @@
-import React from 'react'
-import Item from './Item';
-import { useTheme } from './ThemeContext';
+import React, {useState, useEffect} from 'react'
 
-export default function Practice() {
-  const { theme } = useTheme();
-  const headerStyle = {
-    backgroundColor: theme === 'dark' ? '#333' : 'white',
-    color: theme === 'dark' ? 'white' : 'black',
-  };
+function Practice() {
+  const [count, setCount] = useState(0);
   return (
-    <section style={headerStyle}>
-      <h1>Sally Ride's Packing List</h1>
-      <ul>
-        <Item 
-          isPacked={true} 
-          name="Space suit" 
-          importance={9}
-        />
-        <Item 
-          isPacked={true} 
-          name="Helmet with a golden leaf" 
-          importance={6}
-        />
-        <Item 
-          isPacked={false} 
-          name="Photo of Tam" 
-        />
-      </ul>
-    </section>
-  );
+    <div>
+      <p>{count}</p>
+      <button onClick={() => {setCount(count + 2)}}>increment</button>
+    </div>
+  )
 }
+
+export default Practice
